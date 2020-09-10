@@ -1,7 +1,7 @@
-#一.初步分析： 
+# 一.初步分析： 
 
 打开esp.exe  拖动鼠标，发现有个箭头指向一些东西，但是显示不出来。那么我们第一步就要找到那个显示不出来的图片。esp是透视的意思，所以我猜后续是不是跟FPS游戏有关。  
-#二.寻找看到图片的方法：  
+# 二.寻找看到图片的方法：  
 
 WINMAIN函数中先读取了两段数据：  
 ![](https://github.com/WindRunner97/2018gslab2/blob/master/IMG/1.png)   
@@ -15,7 +15,7 @@ WINMAIN函数中先读取了两段数据：
 在OD里Nop掉后 发现这个图是这样的:
 ![](https://github.com/WindRunner97/2018gslab2/blob/master/IMG/4.png)  
 但是很乱，基本看不出来这是什么。  
-#3.	重新绘制图  
+# 3.	重新绘制图  
 思路是把这些图在内存中的位置找到，将找到的点的坐标得到，再用我们更清晰的方法显示出来。
 发现在OD里，这一段是存储点位置的地方，存的都是浮点数：  
 ![](https://github.com/WindRunner97/2018gslab2/blob/master/IMG/5.png)  
